@@ -1,0 +1,27 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "First electron app",
+  "main": "main.js",
+  "scripts": {
+    "electron": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gauravmahto/electron-app.git"
+  },
+  "keywords": [
+    "electron",
+    "nodejs"
+  ],
+  "author": "Gaurav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gauravmahto/electron-app/issues"
+  },
+  "homepage": "https://github.com/gauravmahto/electron-app#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "1.8.2"
+  }
+}
