@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Add items</title>
+</head>
+
+<body>
+
+  <form name="addItem">
+
+    <div>
+      <label for="item">Enter an item name: </label>
+      <input type="text" name="item" id="item" autofocus="true" required="true">
+    </div>
+
+    <button type="submit">Add</button>
+
+  </form>
+
+  <script>
+
+    const electron = require('electron');
+    const { ipcRenderer } = electron;
+
+    const form = document.querySelector('form[name="addItem"]');
+
+    if (null !== form) {
+
+      form.addEventListener('submit', (e) => {
+
+        e.preventDefault();
+        const item = document.querySelector('#item').value;
+
+        ipcRenderer.send('item:add', item);
+
+      });
+
+    }
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Electron demo app</title>
+</head>
+
+<body>
+
+  <h1>Welcome to an electron app</h1>
+  <ul id="item"></ul>
+
+  <script>
+
+    const electron = require('electron');
+    const { ipcRenderer } = electron;
+    const ulElem = document.querySelector('ul#item');
+
+    ipcRenderer.on('item:add', ({ }, item) => {
+
+      const liElem = document.createElement('li');
+      const itemText = document.createTextNode(item);
+      liElem.appendChild(itemText);
+
+      ulElem.appendChild(liElem);
+
+    });
+
+    ipcRenderer.on('item:clear', () => {
+      ulElem.innerHTML = '';
+    });
+
+  </script>
+
+</body>
+
+</html>
